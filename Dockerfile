@@ -2,7 +2,7 @@ FROM continuumio/miniconda3
 
 # Install the conda environment
 COPY environment.yml /
-RUN conda env update --file environment.yml && conda clean -a
+RUN conda env update --name base --file environment.yml && conda clean -a
 
 # Add conda installation dir to PATH (instead of doing 'conda activate')
 ENV PATH /opt/conda/bin:$PATH
